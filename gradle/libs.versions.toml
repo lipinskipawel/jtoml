@@ -3,3 +3,4 @@ junit-jupiter = "5.10.2"
 
 [libraries]
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
+assertJ = "org.assertj:assertj-core:3.24.2"
