@@ -5,6 +5,7 @@ public enum TokenType {
     HASH("#"),
     IDENT(""),
     QUOTED_IDENT("\""),
+    EQ("="),
     EOF("");
 
     private final String representation;

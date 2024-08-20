@@ -3,6 +3,7 @@ package org.example.lexer;
 import static java.lang.Character.isDigit;
 import static java.lang.Character.isLetter;
 import static org.example.lexer.TokenType.EOF;
+import static org.example.lexer.TokenType.EQ;
 import static org.example.lexer.TokenType.HASH;
 import static org.example.lexer.TokenType.IDENT;
 import static org.example.lexer.TokenType.QUOTED_IDENT;
@@ -28,6 +29,10 @@ public final class Lexer {
         return switch (character) {
             case '#' -> readComment();
             case '"' -> readQuotedIdentifiers();
+            case '=' -> {
+                readChar();
+                yield EQ.token();
+            }
             case 0 -> new Token(EOF, "");
             default -> {
                 if (isIdentifier()) {
