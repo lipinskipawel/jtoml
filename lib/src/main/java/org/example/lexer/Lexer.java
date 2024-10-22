@@ -2,6 +2,7 @@ package org.example.lexer;
 
 import static java.lang.Character.isDigit;
 import static java.lang.Character.isLetter;
+import static java.util.Objects.requireNonNull;
 import static org.example.lexer.TokenType.EOF;
 import static org.example.lexer.TokenType.EQ;
 import static org.example.lexer.TokenType.HASH;
@@ -16,7 +17,7 @@ public final class Lexer {
     private char character; // current char under examination
 
     public Lexer(String input) {
-        this.input = input;
+        this.input = requireNonNull(input);
         this.inputLength = input.length();
         position = 0;
         readPosition = 0;
